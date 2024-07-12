@@ -4,7 +4,7 @@ html{
 
 
 body {
-    background-color: #fff;
+    background-color: #E7FCFF;
 }
 
 
@@ -14,6 +14,10 @@ h1 {
     text-align: left;
     text-shadow: 1px 1px 3px #DADEDF;
     
+}
+
+header {
+    background-color: white;
 }
 
 .right {
