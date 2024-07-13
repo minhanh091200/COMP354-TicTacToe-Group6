@@ -111,7 +111,7 @@
 
           <table class="table">
             <thead>
-              <tr style="color: crimson;">
+              <tr style="color: #2a2a2a;">
                 <th scope="col">Game/User</th>
                 <th scope="col" id = "Player1">Player</th>
                 <th scope="col" id = "Player2">Computer</th>
@@ -158,6 +158,8 @@ function myFunction() {
    var darkToggle = document.getElementsByClassName('btn')
    var heroText = document.getElementsByClassName('navbar-brand')
    var arr = Array.prototype.slice.call(heroText)
+   var instruct = document.getElementsByClassName('instructions')[0];
+   var startBtns = document.getElementsByClassName('start-btn');
 
    arr.forEach(element => {
     element.classList.toggle('dark-text')
@@ -171,7 +173,12 @@ function myFunction() {
 
    hero.classList.toggle("dark-hero");
    main.classList.toggle("dark-main");
-   container.classList.toggle("dark-play")
+   container.classList.toggle("dark-play");
+   instruct.classList.toggle("dark-instruct");
+   
+   Array.prototype.forEach.call(startBtns, function(btn) {
+       btn.classList.toggle("dark-start-btn");
+   });
 }
 </script>
       <select id="ai_level">
