@@ -38,10 +38,10 @@
     <nav class="navbar fixed-top" id="hero">
       <button class="btn btn-primary" onclick="playAudio(this)" type="button">Play Music</button>
       <input type="range" id="volume-slider">
+      <a class="navbar-brand" href="mainmenu.html">Home</a>
       <a class="navbar-brand" href="about.html">About</a>
-      <a class="navbar-brand" href="#">Play Game</a>
       <a class="navbar-brand" href="contributors.html">Contributors</a>
-      <button class="btn btn-info" onclick="myFunction()">Dark Mode</button>
+      <button class="btn btn-info" onclick="enableDarkMode()">Dark Mode</button>
     </nav>
     </br>
 
@@ -93,7 +93,7 @@
             <table>
               <tr>
                 <th><button type="button" class="player1-btn start-btn" name="button" onclick="singlePlayer()">Single Player</button></th>
-                <th><button type="button" class="player2-btn start-btn" name="button" onclick="twoPlayer()">2 Players</button></th>
+                <th><button type="button" class="player2-btn start-btn" name="button" onclick="twoPlayer()">Multi Player</button></th>
               </tr>
             </table>
       </div>
@@ -105,9 +105,11 @@
           <table>
             <tr>
               <th><button type="button"  name="button" onclick="singlePlayer()">Single Player</button></th>
-              <th><button type="button" name="button" onclick="twoPlayer()">2 Players</button></th>
+              <th><button type="button" name="button" onclick="twoPlayer()">Multi Player</button></th>
             </tr>
           </table>
+
+          <h2 id = "move">PLAYER plays as O!</h2>
 
           <table class="table">
             <thead>
@@ -117,7 +119,6 @@
                 <th scope="col" id = "Player2">Computer</th>
               </tr>
             </thead>
-            <h2 id = "move">PLAYER MOVE!</h2>
             <tbody>
               <tr>
                 <th scope="row" class="table-success">Win</th>
@@ -125,7 +126,7 @@
                 <td id="computerstat1" class="computerstat table-success"></td>
               </tr>
               <tr>
-                <th scope="row" class="table-danger">Lost</th>
+                <th scope="row" class="table-danger">Loss</th>
                 <td id="loss1" class="computerstat table-danger"></td>
                 <td id="loss2" class="playerstat table-danger"></td>
               </tr>
@@ -151,7 +152,7 @@
       <!-- <button onclick="myFunction()">Toggle dark mode</button> -->
 
 <script>
-function myFunction() {
+function enableDarkMode() {
    var main = document.body;
    var hero = document.getElementsByClassName('navbar')[0]
    var container = document.getElementById('play')
@@ -182,15 +183,15 @@ function myFunction() {
 }
 </script>
       <select id="ai_level">
-        <option value="easy" selected>Easy</option>
+        <option value="easy">Easy</option>
         <option value="normal">Normal</option>
         <option value="hard">Hard</option>
       </select>
       <div class="div-end-of-game">
         <!-- <button onclick="reset_board()">RESET BOARD</button> -->
         <button onclick="undoLastMove()">Undo Move</button>
-        <button id="selectXButton" onclick="selectFirstPlayer('X')">Play O first</button>
-        <button id="selectOButton" onclick="selectFirstPlayer('O')">Play X first</button>
+        <button id="selectXButton" onclick="selectFirstPlayer('X')">Player first</button>
+        <button id="selectOButton" onclick="selectFirstPlayer('O')">Computer first</button>
 
       </div>
       <h2 id="winner"></h2>
