@@ -19,7 +19,14 @@ const render_board = () => {
 
 const configure_ai = () => {
     let ai_select = document.querySelector("#ai_level");
-    ai_level = Array.from(ai_select.options).filter(option => option.defaultSelected == true)[0].value;
+    const difficulty = localStorage.getItem('difficulty');
+    if (difficulty) {
+        ai_select.value = difficulty;
+    }
+    else {
+        ai_select.value = 'easy';
+    }
+    ai_level = ai_select.value;
     ai_select.addEventListener("change", event => {
         ai_level = event.target.options[event.target.selectedIndex].value;
     });
@@ -83,7 +90,7 @@ const game_loop = () => {
 //FUNCTION TO DISPLAY WHOSE MOVE IT IS (Player/Computer/Player 1/2)
 const showPlayer = (mode,player) => {
   if (mode == 1){ // mode 1 is single Player
-    if (player == 1)   document.getElementById("move").innerHTML = "Player Move!";
+    if (player == 1)   document.getElementById("move").innerHTML = "PLAYER plays as O!";
   }
   else { // Mode == 2 for 2 Players
     if (player == 1)   document.getElementById("move").innerHTML = "Player 1 Move!";

@@ -4,13 +4,13 @@ html{
 
 
 body {
-    background-color: #E1F5FF;
+    background-color: #91E6F8;
 }
 
 
 
 h1 {
-    color: #a0c4ff;
+    color: #1682a3;
     text-align: left;
     text-shadow: 1px 1px 3px #DADEDF;
     
@@ -37,24 +37,23 @@ header {
 }
 
 .pagination a {
-        color: #a0c4ff;
+        color: #1682a3;
         float: left;
         padding: 10px 10px;
 }
 
 .pagination a.active {
-            background-color: #a0c4ff;
+            background-color: #1682a3;
             color: white;
 }
 
 .pagination a:hover:not(.active) {
-
-            background-color: #9bf6ff;
+            background-color: #36DED8;
             color: white;
 }
 .pagination button {
     background-color: white;
-    color: #a0c4ff;
+    color: #1682a3;
     float: left;
     padding: 10px 10px;
     border: thin;
@@ -65,7 +64,7 @@ header {
 
 }
 .pagination button:hover:not(.active) {
-    background-color: #9bf6ff;
+    background-color: #36DED8;
     color: white;
 
 }
@@ -75,18 +74,20 @@ header {
 /* Styling for Containers */
 /*****************************/
 .wrapper {
+    background-color: white;
     position: relative;
     max-width: 700px;
     border-radius: 10px;
     margin: 50px auto;
     padding: 30px 40px;
-    box-shadow: 20px 20px 20px #a0c4ff
+    box-shadow: 20px 20px 20px #1682a3;
 }
 .wrapper .h4{
     color: #0c0c68;
+    text-shadow: 1px 1px 3px #DADEDF;
     font-size: 50px;
-    font-family: 'Luckiest Guy', cursive;
-
+    text-align: center;
+    padding-top: 0.5rem;
 }
 .right {
     text-align: right;
@@ -118,7 +119,7 @@ header {
 
    background-color: transparent;
    -webkit-box-shadow: 2.5px 2.5px 2.5px 0px #000000, inset 2px 2px 7.5px 0px #000000, 2.5px 2.5px 7.5px 2.5px rgba(255,139,253,0); 
-   box-shadow: 2.5px 2.5px 2.5px 0px #80ffdb, inset 2px 2px 7.5px 0px #a0c4ff, 2.5px 2.5px 7.5px 2.5px black;
+   box-shadow: 2.5px 2.5px 2.5px 0px #80ffdb, inset 2px 2px 7.5px 0px #1682a3, 2.5px 2.5px 7.5px 2.5px black;
    text-shadow: #FFF 0px 0px 2.5px, #FFF 0px 0px 5px, #FFF 0px 0px 7.5px, #52b788 0px 0px 5px, #00b8ff 0px 0px 5px, #bd00ff 0px 0px 5px, #bd00ff 0px 0px 5px, #bd00ff 0px 0px 5px;
    border: 0.2px double #d600ff;
    border-radius: 1.5px;
@@ -137,6 +138,48 @@ header {
 
 .wrapper .button:hover:active:before {
     filter: blur(2px)
+}
+
+/* Dark mode styles */
+.dark-mode {
+background-color: #535cc0;
+color: #ffffff;
+}
+
+.dark-mode .h4 {
+color: #ffffff;
+}
+
+.dark-mode .wrapper {
+    color: #ffffff;
+    background-color: #333333;
+}
+
+.dark-mode header {
+    color: #ffffff;
+    background-color: #333333;
+}
+
+.dark-mode .button {
+background-color: #333333;
+color: #ffffff;
+border: 2px solid #ffffff;
+}
+
+.dark-mode .pagination a {
+color: #ffffff;
+}
+
+.dark-mode .pagination .btn-info {
+background-color: #333333;
+border-color: #ffffff;
+color: #ffffff;
+}
+
+.dark-mode .pagination .btn-primary {
+background-color: #333333;
+border-color: #ffffff;
+color: #ffffff;
 }
 
 @keyframes animate {

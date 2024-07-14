@@ -21,6 +21,7 @@
     background-color: #fff;
     color: #000;
     padding: 3%;
+    border-radius: 8px;
 }
 
 .instructions h1 {
@@ -39,12 +40,12 @@
 }
 
 .start-btn {
-    margin: 2% 20%;
+    margin: 2% 35%;
     border: 2px solid #1682a3;
     background-color: #fff;
     color: #1682a3;
     border-radius: 15px;
-    padding: 25px 90px;
+    padding: 15px 60px;
 }
 
 .start-btn:hover {
@@ -111,6 +112,7 @@ button:hover {
 
 #move {
     color: #2a2a2a;
+    margin-top: 2%;
 }
 
 .play-area {
@@ -190,7 +192,8 @@ button:hover {
 }
 
 #ai_level {
-    margin-bottom: 0.5%;
+    margin-top: 1.5%;
+    margin-bottom: 2%;
 }
 
 .navbar {
@@ -433,6 +436,11 @@ pre {
 }
 
 /* light and dark mode style */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 body {
     padding: 25px;
     background-image: linear-gradient(to right, #76e2df, #1682a3);
