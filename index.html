@@ -156,35 +156,61 @@
       <!-- <button onclick="myFunction()">Toggle dark mode</button> -->
 
 <script>
+
+window.onload = function() {
+  const currentMode = localStorage.getItem('theme') || 'light-mode';
+  document.body.classList.add(currentMode);
+  console.log(currentMode);
+  if(currentMode == "dark-mode"){
+    setDarkMode();
+  }
+};
+
 function enableDarkMode() {
-   var main = document.body;
-   var hero = document.getElementsByClassName('navbar')[0]
-   var container = document.getElementById('play')
-   var darkToggle = document.getElementsByClassName('btn')
-   var heroText = document.getElementsByClassName('navbar-brand')
-   var arr = Array.prototype.slice.call(heroText)
-   var instruct = document.getElementsByClassName('instructions')[0];
-   var startBtns = document.getElementsByClassName('start-btn');
+   setDarkMode();
 
-   arr.forEach(element => {
-    element.classList.toggle('dark-text')
-   });
+   const body = document.body;
+   const currentMode = body.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode';
+   const newMode = currentMode === 'dark-mode' ? 'light-mode' : 'dark-mode';
 
-   if (darkToggle[1].textContent === "Dark Mode"){
-     darkToggle[1].textContent = "Light Mode"
-   } else {
-     darkToggle[1].textContent = "Dark Mode"
-   }
+   body.classList.remove(currentMode);
+   body.classList.add(newMode);
 
-   hero.classList.toggle("dark-hero");
-   main.classList.toggle("dark-main");
-   container.classList.toggle("dark-play");
-   instruct.classList.toggle("dark-instruct");
-   
-   Array.prototype.forEach.call(startBtns, function(btn) {
-       btn.classList.toggle("dark-start-btn");
-   });
+   // Save the preference to local storage
+   console.log("newMode:" +newMode)
+   localStorage.setItem('theme', newMode);
 }
+
+function setDarkMode() {
+  var main = document.body;
+  var hero = document.getElementsByClassName('navbar')[0]
+  var container = document.getElementById('play')
+  var darkToggle = document.getElementsByClassName('btn')
+  var heroText = document.getElementsByClassName('navbar-brand')
+  var arr = Array.prototype.slice.call(heroText)
+  var instruct = document.getElementsByClassName('instructions')[0];
+  var startBtns = document.getElementsByClassName('start-btn');
+
+  arr.forEach(element => {
+   element.classList.toggle('dark-text')
+  });
+
+  if (darkToggle[1].textContent === "Dark Mode"){
+    darkToggle[1].textContent = "Light Mode"
+  } else {
+    darkToggle[1].textContent = "Dark Mode"
+  }
+
+  hero.classList.toggle("dark-hero");
+  main.classList.toggle("dark-main");
+  container.classList.toggle("dark-play");
+  instruct.classList.toggle("dark-instruct");
+  
+  Array.prototype.forEach.call(startBtns, function(btn) {
+      btn.classList.toggle("dark-start-btn");
+  });
+}
+
 </script>
 
       <select id="ai_level">
