@@ -92,7 +92,8 @@ const game_loop = () => {
 //FUNCTION TO DISPLAY WHOSE MOVE IT IS (Player/Computer/Player 1/2)
 const showPlayer = (mode,player) => {
   if (mode == 1){ // mode 1 is single Player
-    if (player == 1)   document.getElementById("move").innerHTML = "PLAYER plays as O!";
+    if (player == 1 && !isFunMode)   document.getElementById("move").innerHTML = "PLAYER plays as O!";
+    else if (player == 1 && isFunMode)   document.getElementById("move").innerHTML = "PLAYER plays as 😀!";
   }
   else { // Mode == 2 for 2 Players
     if (player == 1)   document.getElementById("move").innerHTML = "Player 1 Move!";
