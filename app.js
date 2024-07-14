@@ -62,6 +62,8 @@ const singlePlayer = () => {
   document.getElementById("Player1").innerHTML = " Player";
   document.getElementById("Player2").innerHTML = " Computer";
   gameMode = 1;
+  document.getElementById("selectOButton").onclick = function() { selectFirstPlayer('O'); };
+  document.getElementById("selectXButton").onclick = function() { selectFirstPlayer('X'); };
   player = "O"; //DEFAULT PLAYER SETTINGS FOR SINGLE PLAYER
   computer = "X";
   reset_board();
@@ -188,7 +190,7 @@ const addComputerMove = (ai_level) => {
     }
 }
 
-let scores = {X : 1, O : -1, tie : 0};
+let scores = {X : 1, '🤖' : 1, O : -1, '😀' : -1, tie : 0};
 
 const minimax = (board, isMaximizing) => {
     let res = check_match();
@@ -240,7 +242,7 @@ const checkWinner = () => {
     const winner_statement = document.getElementById("winner");
     const audio = document.querySelector("audio");
 
-    if (res == "O") {
+    if (res == "O" || res == "😀") {
       if (gameMode == 1)  winner_statement.innerText = "Player Won"; // Single player mode
       else winner_statement.innerText = "Player 1 Won"; // 2 player mode
         winner_statement.classList.add("playerWin");
@@ -255,7 +257,7 @@ const checkWinner = () => {
         endMusic.play();
 
     }
-    else if (res == "X") {
+    else if (res == "X" || res == "🤖") {
         if (gameMode == 1)  winner_statement.innerText = "Computer Won"; //Single player mode
         else winner_statement.innerText = "Player 2 Won"; // 2 player mode
         winner_statement.classList.add("computerWin");
@@ -392,14 +394,14 @@ const reset_board1 = (firstPlayer) => {
 
 const setStartingPlayer = (firstPlayer) => {
     if (play_board.every(item => item === "")) {
-        if (firstPlayer === 'X') {
+        if (firstPlayer === 'X' || firstPlayer === '😀') {
             if (gameMode == 1) {
                 showPlayer(1, 1); // Assuming showPlayer function takes parameters for player and symbol
             } else {
                 showPlayer(2, 1); // Assuming showPlayer function takes parameters for player and symbol
             }
             console.log("PLAYER STARTS");
-        } else if (firstPlayer === 'O') {
+        } else if (firstPlayer === 'O' || firstPlayer === '🤖') {
             if (gameMode == 1) {
                 addComputerMove(ai_level);
             } else {
@@ -408,6 +410,40 @@ const setStartingPlayer = (firstPlayer) => {
             console.log("COMPUTER STARTS");
         }
     }
+}
+
+/* Fun Mode */
+let isFunMode = false;
+
+function enableFunMode() {
+    isFunMode = !isFunMode;
+    updateSymbols();
+}
+
+function updateSymbols() {
+    const playerButton = document.getElementById("selectXButton");
+    const computerButton = document.getElementById("selectOButton");
+    if (isFunMode) {
+        playerButton.textContent = "😀 Player first";
+        computerButton.textContent = "🤖 Computer first";
+        playerButton.onclick = function() { selectFirstPlayer('😀'); };
+        computerButton.onclick = function() { selectFirstPlayer('🤖'); };
+        document.getElementById("move").innerHTML = "PLAYER plays as 😀!";
+        player = "😀";
+        computer = "🤖";
+    } else {
+        playerButton.textContent = "Player first";
+        computerButton.textContent = "Computer first";
+        playerButton.onclick = function() { selectFirstPlayer('X'); };
+        computerButton.onclick = function() { selectFirstPlayer('O'); };
+        document.getElementById("move").innerHTML = "PLAYER plays as O!";
+        player = "O";
+        computer = "X";
+    }
+    render_board();
+    reset_board1();
+    configure_ai();
+    randomizeStart();
 }
 
 render_board();
