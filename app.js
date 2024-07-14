@@ -417,6 +417,16 @@ let isFunMode = false;
 
 function enableFunMode() {
     isFunMode = !isFunMode;
+
+    const funModeButton = document.querySelector(".fun-btn");
+    if (isFunMode) {
+        funModeButton.textContent = "Normal Mode";
+        funModeButton.classList.add("fun-mode-active");
+    } else {
+        funModeButton.textContent = "Fun Mode!";
+        funModeButton.classList.remove("fun-mode-active");
+    }
+
     updateSymbols();
 }
 
