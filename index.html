@@ -160,7 +160,6 @@
 window.onload = function() {
   const currentMode = localStorage.getItem('theme') || 'light-mode';
   document.body.classList.add(currentMode);
-  console.log(currentMode);
   if(currentMode == "dark-mode"){
     setDarkMode();
   }
@@ -177,7 +176,6 @@ function enableDarkMode() {
    body.classList.add(newMode);
 
    // Save the preference to local storage
-   console.log("newMode:" +newMode)
    localStorage.setItem('theme', newMode);
 }
 

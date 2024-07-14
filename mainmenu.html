@@ -108,7 +108,6 @@
         const darkToggle = document.querySelector('.btn-info');
         darkToggle.textContent = currentMode === 'dark-mode' ? 'Light Mode' : 'Dark Mode';
 
-        console.log(currentMode);
         if (currentMode === 'dark-mode') {
             setDarkMode();
         }
@@ -129,7 +128,6 @@
           const darkToggle = document.querySelector('.btn-info');
           darkToggle.textContent = newMode === 'dark-mode' ? 'Light Mode' : 'Dark Mode';
 
-          console.log("newMode:" + newMode);
       }
 
       function setDarkMode() {
