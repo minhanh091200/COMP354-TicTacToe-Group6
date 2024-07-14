@@ -4,7 +4,7 @@ html{
 
 
 body {
-    background-color: #91E6F8;
+    background-image: linear-gradient(to right, #76e2df, #1682a3);
 }
 
 
@@ -142,7 +142,7 @@ header {
 
 /* Dark mode styles */
 .dark-mode {
-background-color: #535cc0;
+background-image: linear-gradient(to right, #344d75, #33b5f1);
 color: #ffffff;
 }
 
