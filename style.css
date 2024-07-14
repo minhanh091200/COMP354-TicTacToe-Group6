@@ -49,9 +49,18 @@
 }
 
 .fun-btn {
-    margin: 2% 2%;
+    margin: 10% 10%;
     border: 2px solid #1682a3;
     background-color: #fbaaff;
+    color: #fff;
+    border-radius: 15px;
+    padding: 15px 15px;
+}
+
+.fun-btn.fun-mode-active {
+    margin: 10% 10%;
+    border: 2px solid #1682a3;
+    background-color: #6477f3;
     color: #fff;
     border-radius: 15px;
     padding: 15px 15px;
@@ -127,7 +136,6 @@ button:hover {
 
 #move {
     color: #2a2a2a;
-    margin-top: 2%;
 }
 
 .play-area {
