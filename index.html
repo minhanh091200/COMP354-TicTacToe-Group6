@@ -109,6 +109,10 @@
             </tr>
           </table>
 
+          <div>
+            <button type="button" class="fun-btn" onclick="enableFunMode()">Fun Mode!</button>
+          </div>
+
           <h2 id = "move">PLAYER plays as O!</h2>
 
           <table class="table">
@@ -182,6 +186,7 @@ function enableDarkMode() {
    });
 }
 </script>
+
       <select id="ai_level">
         <option value="easy">Easy</option>
         <option value="normal">Normal</option>
@@ -190,8 +195,8 @@ function enableDarkMode() {
       <div class="div-end-of-game">
         <!-- <button onclick="reset_board()">RESET BOARD</button> -->
         <button onclick="undoLastMove()">Undo Move</button>
-        <button id="selectXButton" onclick="selectFirstPlayer('X')">Player first</button>
-        <button id="selectOButton" onclick="selectFirstPlayer('O')">Computer first</button>
+        <button id="selectXButton">Player first</button>
+        <button id="selectOButton">Computer first</button>
 
       </div>
       <h2 id="winner"></h2>
