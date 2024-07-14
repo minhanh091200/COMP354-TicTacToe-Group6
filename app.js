@@ -129,11 +129,13 @@ const addPlayerMove = e => {
             showPlayer(1, 1);
         } else {
             // Toggle player - player changer
-            if (player == "X") {
-                player = "O";
+            if (player == "X" || player == "😀") {
+                if(isFunMode){ player = "🤖"; }
+                else{ player = "O";}
                 showPlayer(2, 1);
             } else {
-                player = "X";
+                if(isFunMode){ player = "😀"; }
+                else{ player = "X";}
                 showPlayer(2, 2);
             }
         }
