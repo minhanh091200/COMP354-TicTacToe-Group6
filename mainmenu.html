@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TTC</title>
-    <link rel="shortcut icon" href="tic-tac-toe.png" type="image/x-icon"> <!--Adding favicon-->
+    <title>TTC</title> <!--Adding favicon-->
 
     <link
       rel="stylesheet"
@@ -100,26 +99,49 @@
 
       <!-- <button onclick="myFunction()">Toggle dark mode</button> -->
 
-      <script>
-        function enableDarkMode() {
-          var body = document.body;
-          var darkToggle = document.querySelector('.btn-info');
-          
-          body.classList.toggle("dark-mode");
-  
-          if (darkToggle.textContent === "Dark Mode") {
-            darkToggle.textContent = "Light Mode";
-          } else {
-            darkToggle.textContent = "Dark Mode";
-          }
+    <script>
+      window.onload = function() {
+        const currentMode = localStorage.getItem('theme') || 'light-mode';
+        document.body.classList.add(currentMode);
+
+        // Set button text based on current mode
+        const darkToggle = document.querySelector('.btn-info');
+        darkToggle.textContent = currentMode === 'dark-mode' ? 'Light Mode' : 'Dark Mode';
+
+        console.log(currentMode);
+        if (currentMode === 'dark-mode') {
+            setDarkMode();
         }
+      };
+
+      function enableDarkMode() {
+          const body = document.body;
+          const currentMode = body.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode';
+          const newMode = currentMode === 'dark-mode' ? 'light-mode' : 'dark-mode';
+
+          body.classList.remove(currentMode);
+          body.classList.add(newMode);
+
+          // Save the preference to local storage
+          localStorage.setItem('theme', newMode);
+
+          // Update button text
+          const darkToggle = document.querySelector('.btn-info');
+          darkToggle.textContent = newMode === 'dark-mode' ? 'Light Mode' : 'Dark Mode';
+
+          console.log("newMode:" + newMode);
+      }
+
+      function setDarkMode() {
+          document.body.classList.add('dark-mode');
+      }
+        
       </script>
       
     
 
     <script src="https://connect.facebook.net/en_US/fbinstant.6.3.js"></script>
-    <script src="app.js"></script>
-
+    <script scr="app.js"></script>
     
   </body>
 </html>
