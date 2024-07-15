@@ -63,7 +63,7 @@
     padding: 15px 15px;
 }
 
-.dark-mode .fun-btn {
+.dark-btns .fun-btn {
     color: #2a2a2a;
     background-color: #ad6bb0; /* Dark mode background color */
 }
@@ -73,7 +73,7 @@
     color: #fbaaff;
 }
 
-.dark-mode .fun-btn:hover {
+.dark-btns .fun-btn:hover {
     background-color: #2a2a2a; /* Dark mode hover background color */
     color: #ad6bb0;
 }
@@ -87,7 +87,7 @@
     padding: 15px 15px;
 }
 
-.dark-mode .fun-btn.fun-mode-active {
+.dark-btns .fun-btn.fun-mode-active {
     background-color: #6c6bb0;
     color: #2a2a2a;
 }
@@ -97,7 +97,7 @@
     color: #a9a8fc;
 }
 
-.dark-mode .fun-btn.fun-mode-active:hover {
+.dark-btns .fun-btn.fun-mode-active:hover {
     background-color: #2a2a2a;
     color: #6c6bb0;
 }
@@ -127,7 +127,7 @@
 .custom-heading,
 .custom-subheading,
 .custom-table th button {
-    color: white; /* Default color for light mode */
+    color: white;
 }
 
 .custom-table button {
@@ -153,28 +153,27 @@
     color: #1682a3;
 }
 
-.dark-mode .custom-heading,
-.dark-mode .custom-subheading,
-.dark-mode .custom-table button,
-.dark-mode .end-button {
+.dark-btns .custom-heading,
+.dark-btns .custom-subheading,
+.dark-btns .custom-table button,
+.dark-btns .end-button {
     color: #2a2a2a;
 }
 
-/* Ensure the button's border and background color are also set properly */
-.dark-mode .custom-table button {
+.dark-btns .custom-table button {
     border-color: #2a2a2a;
-    background-color: transparent; /* Adjust as necessary for your design */
+    background-color: transparent;
 }
 
-.dark-mode .end-button {
+.dark-btns .end-button {
     border-color: #2a2a2a;
-    background-color: transparent; /* Adjust as necessary for your design */
+    background-color: transparent;
 }
 
-.dark-mode .end-button:hover,
-.dark-mode .custom-table button:hover {
-    background-color: #2a2a2a; /* Dark mode hover background color */
-    color: #3481b3; /* Light text on hover */
+.dark-btns .end-button:hover,
+.dark-btns .custom-table button:hover {
+    background-color: #2a2a2a;
+    color: #3481b3;
 }
 
 a {
