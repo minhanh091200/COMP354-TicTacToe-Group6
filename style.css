@@ -56,11 +56,26 @@
 
 .fun-btn {
     margin: 10% 10%;
-    border: 2px solid #1682a3;
+    border: none;
     background-color: #fbaaff;
     color: #fff;
     border-radius: 15px;
     padding: 15px 15px;
+}
+
+.dark-mode .fun-btn {
+    color: #2a2a2a;
+    background-color: #ad6bb0; /* Dark mode background color */
+}
+
+.fun-btn:hover {
+    background-color: #fff; /* Light mode hover background color */
+    color: #fbaaff;
+}
+
+.dark-mode .fun-btn:hover {
+    background-color: #2a2a2a; /* Dark mode hover background color */
+    color: #ad6bb0;
 }
 
 .fun-btn.fun-mode-active {
@@ -70,6 +85,10 @@
     color: #fff;
     border-radius: 15px;
     padding: 15px 15px;
+}
+
+.dark-mode .fun-btn.fun-mode-active {
+    background-color: #2a2a2a; /* Dark mode active background color */
 }
 
 .fun-btn.fun-mode-active:hover {
@@ -85,7 +104,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: none;
+    /*background: none;*/
 }
 
 .container > div {
@@ -97,6 +116,59 @@
     /* display: flex;
     justify-content: center;
     align-items: center;*/
+}
+
+.custom-heading,
+.custom-subheading,
+.custom-table th button {
+    color: white; /* Default color for light mode */
+}
+
+.custom-table button {
+    border-color: white;
+}
+
+.custom-table button:hover {
+    background-color: white;
+    color: #1682a3;
+}
+
+.end-button {
+    color: white;
+    border: 4px solid white;
+    background-color: transparent;
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.end-button:hover {
+    background-color: white;
+    color: #1682a3;
+}
+
+.dark-mode .custom-heading,
+.dark-mode .custom-subheading,
+.dark-mode .custom-table button,
+.dark-mode .end-button {
+    color: #2a2a2a;
+}
+
+/* Ensure the button's border and background color are also set properly */
+.dark-mode .custom-table button {
+    border-color: #2a2a2a;
+    background-color: transparent; /* Adjust as necessary for your design */
+}
+
+.dark-mode .end-button {
+    border-color: #2a2a2a;
+    background-color: transparent; /* Adjust as necessary for your design */
+}
+
+.dark-mode .end-button:hover,
+.dark-mode .custom-table button:hover {
+    background-color: #2a2a2a; /* Dark mode hover background color */
+    color: #3481b3; /* Light text on hover */
 }
 
 a {
