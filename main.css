@@ -1,19 +1,15 @@
-html{
+html {
     scroll-behavior: smooth;
 }
-
 
 body {
     background-image: linear-gradient(to right, #76e2df, #1682a3);
 }
 
-
-
 h1 {
     color: #1682a3;
     text-align: left;
-    text-shadow: 1px 1px 3px #DADEDF;
-    
+    text-shadow: 1px 1px 3px #dadedf;
 }
 
 header {
@@ -24,9 +20,7 @@ header {
     text-align: right;
 }
 
-
 /* styling for instruction container */
-
 
 /*****************************/
 /* Styling For Menu */
@@ -37,19 +31,19 @@ header {
 }
 
 .pagination a {
-        color: #1682a3;
-        float: left;
-        padding: 10px 10px;
+    color: #1682a3;
+    float: left;
+    padding: 10px 10px;
 }
 
 .pagination a.active {
-            background-color: #1682a3;
-            color: white;
+    background-color: #1682a3;
+    color: white;
 }
 
 .pagination a:hover:not(.active) {
-            background-color: #36DED8;
-            color: white;
+    background-color: #36ded8;
+    color: white;
 }
 .pagination button {
     background-color: white;
@@ -61,14 +55,11 @@ header {
 .pagination button.active {
     background-color: #52b788;
     color: white;
-
 }
 .pagination button:hover:not(.active) {
-    background-color: #36DED8;
+    background-color: #36ded8;
     color: white;
-
 }
-
 
 /*****************************/
 /* Styling for Containers */
@@ -82,9 +73,9 @@ header {
     padding: 30px 40px;
     box-shadow: 20px 20px 20px #1682a3;
 }
-.wrapper .h4{
+.wrapper .h4 {
     color: #0c0c68;
-    text-shadow: 1px 1px 3px #DADEDF;
+    text-shadow: 1px 1px 3px #dadedf;
     font-size: 50px;
     text-align: center;
     padding-top: 0.5rem;
@@ -92,7 +83,7 @@ header {
 .right {
     text-align: right;
 }
-.wrapper center{
+.wrapper center {
     margin: 0;
     position: relative;
     top: 50%;
@@ -109,45 +100,54 @@ header {
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
 
-
     margin-top: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 80px;
     padding-right: 80px;
 
+    background-color: transparent;
+    -webkit-box-shadow: 2.5px 2.5px 2.5px 0px #000000,
+        inset 2px 2px 7.5px 0px #000000,
+        2.5px 2.5px 7.5px 2.5px rgba(255, 139, 253, 0);
+    box-shadow: 2.5px 2.5px 2.5px 0px #80ffdb, inset 2px 2px 7.5px 0px #1682a3,
+        2.5px 2.5px 7.5px 2.5px black;
+    text-shadow: #fff 0px 0px 2.5px, #fff 0px 0px 5px, #fff 0px 0px 7.5px,
+        #52b788 0px 0px 5px, #00b8ff 0px 0px 5px, #bd00ff 0px 0px 5px,
+        #bd00ff 0px 0px 5px, #bd00ff 0px 0px 5px;
+    border: 0.2px double #d600ff;
+    border-radius: 1.5px;
+    color: #0c0c68;
+    font-family: "Luckiest Guy", cursive;
+    font-size: 8px;
+}
 
-   background-color: transparent;
-   -webkit-box-shadow: 2.5px 2.5px 2.5px 0px #000000, inset 2px 2px 7.5px 0px #000000, 2.5px 2.5px 7.5px 2.5px rgba(255,139,253,0); 
-   box-shadow: 2.5px 2.5px 2.5px 0px #80ffdb, inset 2px 2px 7.5px 0px #1682a3, 2.5px 2.5px 7.5px 2.5px black;
-   text-shadow: #FFF 0px 0px 2.5px, #FFF 0px 0px 5px, #FFF 0px 0px 7.5px, #52b788 0px 0px 5px, #00b8ff 0px 0px 5px, #bd00ff 0px 0px 5px, #bd00ff 0px 0px 5px, #bd00ff 0px 0px 5px;
-   border: 0.2px double #d600ff;
-   border-radius: 1.5px;
-   color: #0c0c68;
-   font-family: 'Luckiest Guy', cursive;
-   font-size: 8px;
-   }
+.wrapper .button:hover {
+    color: white;
+    background-color: #333333;
+    border-color: #333333;
+}
 
-   .wrapper .button:hover:before {
-    opacity: 1
+.wrapper .button:hover:before {
+    opacity: 1;
 }
 
 .wrapper .button:hover:active {
-    background: none
+    background: none;
 }
 
 .wrapper .button:hover:active:before {
-    filter: blur(2px)
+    filter: blur(2px);
 }
 
 /* Dark mode styles */
 .dark-mode {
-background-image: linear-gradient(to right, #344d75, #33b5f1);
-color: #ffffff;
+    background-image: linear-gradient(to right, #344d75, #33b5f1);
+    color: #ffffff;
 }
 
 .dark-mode .h4 {
-color: #ffffff;
+    color: #ffffff;
 }
 
 .dark-mode .wrapper {
@@ -161,39 +161,43 @@ color: #ffffff;
 }
 
 .dark-mode .button {
-background-color: #333333;
-color: #ffffff;
-border: 2px solid #ffffff;
+    background-color: #333333;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.dark-mode .button:hover {
+    background-color: #ffffff;
+    color: #333333;
+    border: 2px solid #ffffff;
 }
 
 .dark-mode .pagination a {
-color: #ffffff;
+    color: #ffffff;
 }
 
 .dark-mode .pagination .btn-info {
-background-color: #333333;
-border-color: #ffffff;
-color: #ffffff;
+    background-color: #333333;
+    border-color: #ffffff;
+    color: #ffffff;
 }
 
 .dark-mode .pagination .btn-primary {
-background-color: #333333;
-border-color: #ffffff;
-color: #ffffff;
+    background-color: #333333;
+    border-color: #ffffff;
+    color: #ffffff;
 }
 
 @keyframes animate {
     0% {
-        background-position: 0 0
+        background-position: 0 0;
     }
 
     50% {
-        background-position: 400% 0
+        background-position: 400% 0;
     }
 
     100% {
-        background-position: 0 0
+        background-position: 0 0;
     }
 }
-
-
