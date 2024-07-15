@@ -3,7 +3,7 @@ let Player1Buttun = document.querySelector(".player1-btn");
 let Player2Buttun = document.querySelector(".player2-btn");
 let customContainer = document.querySelector(".container-custom");
 
-// adding functionalities to the instructions container
+// Adding functionalities to the instructions container
 Player1Buttun.addEventListener("click", () => {
     singlePlayer();
     instuctions.style.display = "none";
