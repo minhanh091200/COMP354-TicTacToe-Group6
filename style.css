@@ -48,6 +48,12 @@
     padding: 15px 60px;
 }
 
+.start-btn:hover {
+    background-color: #1682a3;
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+}
+
 .fun-btn {
     margin: 10% 10%;
     border: 2px solid #1682a3;
@@ -60,22 +66,15 @@
 .fun-btn.fun-mode-active {
     margin: 10% 10%;
     border: 2px solid #1682a3;
-    background-color: #6477f3;
+    background-color: #439fd8;
     color: #fff;
     border-radius: 15px;
     padding: 15px 15px;
 }
 
-.start-btn:hover {
-    background-color: #1682a3;
-    color: #fff;
-    transition: all 0.2s ease-in-out;
-}
-
-.start-btn:hover {
-    background-color: #1682a3;
-    color: #fff;
-    transition: all 0.2s ease-in-out;
+.fun-btn.fun-mode-active:hover {
+    background: #2a2a2a;
+    color: #46b2c1;
 }
 
 .container-custom {
@@ -459,7 +458,8 @@ pre {
 }
 
 /* light and dark mode style */
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
 }
@@ -516,6 +516,18 @@ thead {
 .dark-text {
     color: white !important;
 }
+
+/*.dark-block {
+    background-color: #2a2a2a;
+    color: white;
+    border: 3px solid #213335;
+}
+
+.dark-block:hover {
+    background-color: #3189b2;
+    color: #2a2a2a;
+    border: 3px solid #213335;
+}*/
 
 .table {
     width: 100px;
