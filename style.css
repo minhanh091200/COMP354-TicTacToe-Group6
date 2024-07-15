@@ -80,20 +80,26 @@
 
 .fun-btn.fun-mode-active {
     margin: 10% 10%;
-    border: 2px solid #1682a3;
-    background-color: #439fd8;
+    border: none;
+    background-color: #a9a8fc;
     color: #fff;
     border-radius: 15px;
     padding: 15px 15px;
 }
 
 .dark-mode .fun-btn.fun-mode-active {
-    background-color: #2a2a2a; /* Dark mode active background color */
+    background-color: #6c6bb0;
+    color: #2a2a2a;
 }
 
 .fun-btn.fun-mode-active:hover {
-    background: #2a2a2a;
-    color: #46b2c1;
+    background: #fff;
+    color: #a9a8fc;
+}
+
+.dark-mode .fun-btn.fun-mode-active:hover {
+    background-color: #2a2a2a;
+    color: #6c6bb0;
 }
 
 .container-custom {
