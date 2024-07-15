@@ -78,6 +78,7 @@
     color: #ad6bb0;
 }
 
+/* Styling for the normal mode button */
 .fun-btn.fun-mode-active {
     margin: 10% 10%;
     border: none;
@@ -87,6 +88,7 @@
     padding: 15px 15px;
 }
 
+/* Normal mode button in dark mode */
 .dark-btns .fun-btn.fun-mode-active {
     background-color: #6c6bb0;
     color: #2a2a2a;
@@ -103,14 +105,12 @@
 }
 
 .container-custom {
-    /* border: 5px solid black; */
     padding-top: 10px;
     min-height: 100vh;
     display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /*background: none;*/
 }
 
 .container > div {
@@ -119,9 +119,6 @@
     font-family: Helvetica;
     font-weight: bold;
     font-size: 4em;
-    /* display: flex;
-    justify-content: center;
-    align-items: center;*/
 }
 
 .custom-heading,
@@ -185,9 +182,6 @@ a {
 
 nav {
     border-color: black;
-    /*border-radius: 10px 100px / 120px;*/
-    /*border-style: groove;*/
-    /*border-width: 7px;*/
     background: whitesmoke;
     margin: auto;
     padding: 3px;
@@ -594,30 +588,18 @@ thead {
     color: white !important;
 }
 
-/*.dark-block {
-    background-color: #2a2a2a;
-    color: white;
-    border: 3px solid #213335;
-}
-
-.dark-block:hover {
-    background-color: #3189b2;
-    color: #2a2a2a;
-    border: 3px solid #213335;
-}*/
-
 .table {
     width: 100px;
     visibility: initial;
 }
 
 .btn-sound {
-    background-color: DodgerBlue; /* Blue background */
-    border: none; /* Remove borders */
-    color: white; /* White text */
-    padding: 12px 16px; /* Some padding */
-    font-size: 16px; /* Set a font size */
-    cursor: pointer; /* Mouse pointer on hover */
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .btn-sound:hover {
