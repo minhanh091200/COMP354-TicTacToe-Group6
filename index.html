@@ -100,47 +100,47 @@
     </div>
     <!-- instruction phase ends here -->
     <div class="container-custom">
-          <h1>Tic-Tac-Toe</h1>
-          <h4>Scoreboard</h4>
-          <table>
-            <tr>
-              <th><button type="button"  name="button" onclick="singlePlayer()">Single Player</button></th>
-              <th><button type="button" name="button" onclick="twoPlayer()">Multi Player</button></th>
-            </tr>
-          </table>
+      <h1>Tic-Tac-Toe</h1>
+      <h4>Scoreboard</h4>
+      <table>
+        <tr>
+          <th><button type="button"  name="button" onclick="singlePlayer()">Single Player</button></th>
+          <th><button type="button" name="button" onclick="twoPlayer()">Multi Player</button></th>
+        </tr>
+      </table>
 
-          <div>
-            <button type="button" class="fun-btn" onclick="enableFunMode()">Fun Mode!</button>
-          </div>
+      <div>
+        <button type="button" class="fun-btn" onclick="enableFunMode()">Fun Mode!</button>
+      </div>
 
-          <h2 id = "move">PLAYER plays as O!</h2>
+      <h2 id = "move">PLAYER plays as O!</h2>
 
-          <table class="table">
-            <thead>
-              <tr style="color: #2a2a2a;">
-                <th scope="col">Game/User</th>
-                <th scope="col" id = "Player1">Player</th>
-                <th scope="col" id = "Player2">Computer</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row" class="table-success">Win</th>
-                <td id="playerstat1" class="playerstat table-success"></td>
-                <td id="computerstat1" class="computerstat table-success"></td>
-              </tr>
-              <tr>
-                <th scope="row" class="table-danger">Loss</th>
-                <td id="loss1" class="computerstat table-danger"></td>
-                <td id="loss2" class="playerstat table-danger"></td>
-              </tr>
-              <tr>
-                <th scope="row" class="table-warning">Draw</th>
-                <td id="draw1" class="drawstat table-warning"></td>
-                <td id="draw2" class="drawstat table-warning"></td>
-              </tr>
-            </tbody>
-          </table>
+      <table class="table">
+        <thead>
+          <tr style="color: #2a2a2a;">
+            <th scope="col">Game/User</th>
+            <th scope="col" id = "Player1">Player</th>
+            <th scope="col" id = "Player2">Computer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" class="table-success">Win</th>
+            <td id="playerstat1" class="playerstat table-success"></td>
+            <td id="computerstat1" class="computerstat table-success"></td>
+          </tr>
+          <tr>
+            <th scope="row" class="table-danger">Loss</th>
+            <td id="loss1" class="computerstat table-danger"></td>
+            <td id="loss2" class="playerstat table-danger"></td>
+          </tr>
+          <tr>
+            <th scope="row" class="table-warning">Draw</th>
+            <td id="draw1" class="drawstat table-warning"></td>
+            <td id="draw2" class="drawstat table-warning"></td>
+          </tr>
+        </tbody>
+      </table>
 
       <div class="play-area" id="play">
         <div id="block_0" class="block"></div>
@@ -156,7 +156,6 @@
       <!-- <button onclick="myFunction()">Toggle dark mode</button> -->
 
 <script>
-
 window.onload = function() {
   const currentMode = localStorage.getItem('theme') || 'light-mode';
   document.body.classList.add(currentMode);
@@ -180,54 +179,57 @@ function enableDarkMode() {
 }
 
 function setDarkMode() {
-  var main = document.body;
-  var hero = document.getElementsByClassName('navbar')[0]
-  var container = document.getElementById('play')
-  var darkToggle = document.getElementsByClassName('btn')
-  var heroText = document.getElementsByClassName('navbar-brand')
-  var arr = Array.prototype.slice.call(heroText)
-  var instruct = document.getElementsByClassName('instructions')[0];
-  var startBtns = document.getElementsByClassName('start-btn');
+   var main = document.body;
+   var hero = document.getElementsByClassName('navbar')[0]
+   var container = document.getElementById('play')
+   var darkToggle = document.getElementsByClassName('btn')
+   var heroText = document.getElementsByClassName('navbar-brand')
+   var arr = Array.prototype.slice.call(heroText)
+   var instruct = document.getElementsByClassName('instructions')[0];
+   var startBtns = document.getElementsByClassName('start-btn');
+   var blocks = document.querySelectorAll('.block');
 
-  arr.forEach(element => {
-   element.classList.toggle('dark-text')
-  });
+   arr.forEach(element => {
+    element.classList.toggle('dark-text')
+   });
 
-  if (darkToggle[1].textContent === "Dark Mode"){
-    darkToggle[1].textContent = "Light Mode"
-  } else {
-    darkToggle[1].textContent = "Dark Mode"
-  }
+   if (darkToggle[1].textContent === "Dark Mode"){
+     darkToggle[1].textContent = "Light Mode"
+   } else {
+     darkToggle[1].textContent = "Dark Mode"
+   }
 
-  hero.classList.toggle("dark-hero");
-  main.classList.toggle("dark-main");
-  container.classList.toggle("dark-play");
-  instruct.classList.toggle("dark-instruct");
-  
-  Array.prototype.forEach.call(startBtns, function(btn) {
-      btn.classList.toggle("dark-start-btn");
-  });
+   hero.classList.toggle("dark-hero");
+   main.classList.toggle("dark-main");
+   container.classList.toggle("dark-play");
+   instruct.classList.toggle("dark-instruct");
+   
+   Array.prototype.forEach.call(startBtns, function(btn) {
+       btn.classList.toggle("dark-start-btn");
+   });
+
+   blocks.forEach(block => {
+        block.classList.toggle('dark-block');
+    });
 }
-
 </script>
+<select id="ai_level">
+  <option value="easy">Easy</option>
+  <option value="normal">Normal</option>
+  <option value="hard">Hard</option>
+</select>
+<div class="div-end-of-game">
+  <!-- <button onclick="reset_board()">RESET BOARD</button> -->
+  <button onclick="undoLastMove()">Undo Move</button>
+  <button id="selectXButton">Player first</button>
+  <button id="selectOButton">Computer first</button>
+  <button onclick="reset_board1()">Restart</button>
 
-      <select id="ai_level">
-        <option value="easy">Easy</option>
-        <option value="normal">Normal</option>
-        <option value="hard">Hard</option>
-      </select>
-      <div class="div-end-of-game">
-        <!-- <button onclick="reset_board()">RESET BOARD</button> -->
-        <button onclick="undoLastMove()">Undo Move</button>
-        <button id="selectXButton">Player first</button>
-        <button id="selectOButton">Computer first</button>
-        <button onclick="reset_board1()">Restart</button>
+</div>
+<h2 id="winner"></h2>
+</div>
 
-      </div>
-      <h2 id="winner"></h2>
-    </div>
-
-    <script src="https://connect.facebook.net/en_US/fbinstant.6.3.js"></script>
-    <script src="app.js"></script>
-  </body>
+<script src="https://connect.facebook.net/en_US/fbinstant.6.3.js"></script>
+<script src="app.js"></script>
+</body>
 </html>
