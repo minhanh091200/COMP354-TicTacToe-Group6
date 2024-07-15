@@ -100,9 +100,9 @@
     </div>
     <!-- instruction phase ends here -->
     <div class="container-custom">
-      <h1>Tic-Tac-Toe</h1>
-      <h4>Scoreboard</h4>
-      <table>
+      <h1 class="custom-heading">Tic-Tac-Toe</h1>
+      <h4 class="custom-subheading">Scoreboard</h4>
+      <table class="custom-table">
         <tr>
           <th><button type="button"  name="button" onclick="singlePlayer()">Single Player</button></th>
           <th><button type="button" name="button" onclick="twoPlayer()">Multi Player</button></th>
@@ -211,6 +211,9 @@ function setDarkMode() {
    blocks.forEach(block => {
         block.classList.toggle('dark-block');
     });
+
+   // Add the dark-mode class to body
+   document.body.classList.toggle('dark-mode');
 }
 </script>
 <select id="ai_level">
@@ -220,11 +223,10 @@ function setDarkMode() {
 </select>
 <div class="div-end-of-game">
   <!-- <button onclick="reset_board()">RESET BOARD</button> -->
-  <button onclick="undoLastMove()">Undo Move</button>
-  <button id="selectXButton">Player first</button>
-  <button id="selectOButton">Computer first</button>
-  <button onclick="reset_board1()">Restart</button>
-
+  <button class="end-button" onclick="undoLastMove()">Undo Move</button>
+  <button class="end-button" id="selectXButton">Player first</button>
+  <button class="end-button" id="selectOButton">Computer first</button>
+  <button class="end-button" onclick="reset_board1()">Restart</button>
 </div>
 <h2 id="winner"></h2>
 </div>
