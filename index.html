@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TTC</title>
-    <!--Adding Favicon-->
+    <!-- Adding Favicon -->
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 
     <!-- Add mute button icon library -->
@@ -34,7 +34,7 @@
     </script>
   </head>
   <body>
-
+    <!-- Header -->
     <nav class="navbar fixed-top" id="hero">
       <button class="btn btn-primary" onclick="playAudio(this)" type="button">Play Music</button>
       <input type="range" id="volume-slider">
@@ -45,6 +45,7 @@
     </nav>
     </br>
 
+    <!-- Music Player -->
     <audio id="myAudio">
       <source src="music.mp3" type="audio/ogg">
     </audio>
@@ -68,7 +69,8 @@
            }
       }
     </script>
-    <!-- instructions phase starts here -->
+
+    <!-- Rules Page -->
     <div class="popup-container">
       <div class="instructions">
         <p>You probably already know how to play Tic-Tac-Toe. It's a really simple game, right? That's what most people think. But if you really wrap your brain around it, you'll discover that Tic-Tac-Toe isn't quite as simple as you think!
@@ -98,10 +100,15 @@
             </table>
       </div>
     </div>
-    <!-- instruction phase ends here -->
+
+    <!-- Game Page -->
     <div class="container-custom">
+      <!-- Title -->
       <h1 class="custom-heading">Tic-Tac-Toe</h1>
+      
       <h4 class="custom-subheading">Scoreboard</h4>
+
+      <!-- Singleplayer vs Multiplayer Buttons -->
       <table class="custom-table">
         <tr>
           <th><button type="button"  name="button" onclick="singlePlayer()">Single Player</button></th>
@@ -109,12 +116,14 @@
         </tr>
       </table>
 
+      <!-- Fun Mode Button -->
       <div>
         <button type="button" class="fun-btn" onclick="enableFunMode()">Fun Mode!</button>
       </div>
 
       <h2 id = "move">PLAYER plays as O!</h2>
 
+      <!-- Scoreboard Table -->
       <table class="table">
         <thead>
           <tr style="color: #2a2a2a;">
@@ -142,6 +151,7 @@
         </tbody>
       </table>
 
+      <!-- Tic-Tac-Toe Grid -->
       <div class="play-area" id="play">
         <div id="block_0" class="block"></div>
         <div id="block_1" class="block"></div>
@@ -153,83 +163,88 @@
         <div id="block_7" class="block"></div>
         <div id="block_8" class="block"></div>
       </div>
-      <!-- <button onclick="myFunction()">Toggle dark mode</button> -->
 
+      <!-- Difficulty Level Selector -->
+      <select id="ai_level">
+        <option value="easy">Easy</option>
+        <option value="normal">Normal</option>
+        <option value="hard">Hard</option>
+      </select>
+
+      <!-- End buttons -->
+      <div class="div-end-of-game">
+        <button class="end-button" onclick="undoLastMove()">Undo Move</button>
+        <button class="end-button" id="selectXButton">Player first</button>
+        <button class="end-button" id="selectOButton">Computer first</button>
+        <button class="end-button" onclick="reset_board1()">Restart</button>
+      </div>
+
+      <!-- Pop-up Winner -->
+      <h2 id="winner"></h2>
+</div>
+
+<!-- Dark Mode Script -->
 <script>
-window.onload = function() {
-  const currentMode = localStorage.getItem('theme') || 'light-mode';
-  document.body.classList.add(currentMode);
-  if(currentMode == "dark-mode"){
-    setDarkMode();
+  window.onload = function() {
+    const currentMode = localStorage.getItem('theme') || 'light-mode';
+    document.body.classList.add(currentMode);
+    if(currentMode == "dark-mode"){
+      setDarkMode();
+    }
+  };
+  
+  function enableDarkMode() {
+     setDarkMode();
+  
+     const body = document.body;
+     const currentMode = body.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode';
+     const newMode = currentMode === 'dark-mode' ? 'light-mode' : 'dark-mode';
+  
+     body.classList.remove(currentMode);
+     body.classList.add(newMode);
+  
+     // Save the preference to local storage
+     localStorage.setItem('theme', newMode);
   }
-};
-
-function enableDarkMode() {
-   setDarkMode();
-
-   const body = document.body;
-   const currentMode = body.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode';
-   const newMode = currentMode === 'dark-mode' ? 'light-mode' : 'dark-mode';
-
-   body.classList.remove(currentMode);
-   body.classList.add(newMode);
-
-   // Save the preference to local storage
-   localStorage.setItem('theme', newMode);
-}
-
-function setDarkMode() {
-   var main = document.body;
-   var hero = document.getElementsByClassName('navbar')[0]
-   var container = document.getElementById('play')
-   var darkToggle = document.getElementsByClassName('btn')
-   var heroText = document.getElementsByClassName('navbar-brand')
-   var arr = Array.prototype.slice.call(heroText)
-   var instruct = document.getElementsByClassName('instructions')[0];
-   var startBtns = document.getElementsByClassName('start-btn');
-   var blocks = document.querySelectorAll('.block');
-
-   arr.forEach(element => {
-    element.classList.toggle('dark-text')
-   });
-
-   if (darkToggle[1].textContent === "Dark Mode"){
-     darkToggle[1].textContent = "Light Mode"
-   } else {
-     darkToggle[1].textContent = "Dark Mode"
-   }
-
-   hero.classList.toggle("dark-hero");
-   main.classList.toggle("dark-main");
-   container.classList.toggle("dark-play");
-   instruct.classList.toggle("dark-instruct");
-   
-   Array.prototype.forEach.call(startBtns, function(btn) {
-       btn.classList.toggle("dark-start-btn");
-   });
-
-   blocks.forEach(block => {
-        block.classList.toggle('dark-block');
-    });
-
-   // Add the dark-mode class to body
-   document.body.classList.toggle('dark-btns');
-}
-</script>
-<select id="ai_level">
-  <option value="easy">Easy</option>
-  <option value="normal">Normal</option>
-  <option value="hard">Hard</option>
-</select>
-<div class="div-end-of-game">
-  <!-- <button onclick="reset_board()">RESET BOARD</button> -->
-  <button class="end-button" onclick="undoLastMove()">Undo Move</button>
-  <button class="end-button" id="selectXButton">Player first</button>
-  <button class="end-button" id="selectOButton">Computer first</button>
-  <button class="end-button" onclick="reset_board1()">Restart</button>
-</div>
-<h2 id="winner"></h2>
-</div>
+  
+  function setDarkMode() {
+     var main = document.body;
+     var hero = document.getElementsByClassName('navbar')[0]
+     var container = document.getElementById('play')
+     var darkToggle = document.getElementsByClassName('btn')
+     var heroText = document.getElementsByClassName('navbar-brand')
+     var arr = Array.prototype.slice.call(heroText)
+     var instruct = document.getElementsByClassName('instructions')[0];
+     var startBtns = document.getElementsByClassName('start-btn');
+     var blocks = document.querySelectorAll('.block');
+  
+     arr.forEach(element => {
+      element.classList.toggle('dark-text')
+     });
+  
+     if (darkToggle[1].textContent === "Dark Mode"){
+       darkToggle[1].textContent = "Light Mode"
+     } else {
+       darkToggle[1].textContent = "Dark Mode"
+     }
+  
+     hero.classList.toggle("dark-hero");
+     main.classList.toggle("dark-main");
+     container.classList.toggle("dark-play");
+     instruct.classList.toggle("dark-instruct");
+     
+     Array.prototype.forEach.call(startBtns, function(btn) {
+         btn.classList.toggle("dark-start-btn");
+     });
+  
+     blocks.forEach(block => {
+          block.classList.toggle('dark-block');
+      });
+  
+     // Add the dark-mode class to body
+     document.body.classList.toggle('dark-btns');
+  }
+  </script>
 
 <script src="https://connect.facebook.net/en_US/fbinstant.6.3.js"></script>
 <script src="app.js"></script>
