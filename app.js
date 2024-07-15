@@ -1,11 +1,12 @@
 let play_board = ["", "", "", "", "", "", "", "", ""];
-let player = "O";
-let computer = "X";
-let gameMode = 1; // 1 is for single Player; 2 is for 2 Players
-let board_full = false;
-let ai_level;
+let player = "O"; // Default player symbol
+let computer = "X"; // Default computer symbol
+let gameMode = 1; // 1 is for single player, 2 is for two players
+let board_full = false; // Flag to check if the board is full
+let ai_level; // AI difficulty level (Easy, Normal, Hard)
 let lastMove = null; // Variable to store the last move
 
+// Function to render the game board
 const render_board = () => {
     const board_container = document.querySelector(".play-area");
     board_container.innerHTML = "";
@@ -17,6 +18,7 @@ const render_board = () => {
     });
 };
 
+// Function to configure the AI's difficulty level
 const configure_ai = () => {
     let ai_select = document.querySelector("#ai_level");
     const difficulty = localStorage.getItem("difficulty");
@@ -31,6 +33,7 @@ const configure_ai = () => {
     });
 };
 
+// Initialize Facebook Instant Games
 FBInstant.initializeAsync().then(function () {
     var progress = 0;
     var interval = setInterval(function () {
@@ -45,14 +48,15 @@ FBInstant.initializeAsync().then(function () {
     }, 100);
 });
 
-// RESET GAME TO TWO PLAYER MODE
+// Reset game to two-player mode
 const twoPlayer = () => {
     document.getElementById("Player1").innerHTML = " Player 1(O)";
     document.getElementById("Player2").innerHTML = " Player 2(X)";
     gameMode = 2;
     reset_board();
 };
-//RESET GAME TO SINGLE PLAYER MODE
+
+// Reset game to single-player mode
 const singlePlayer = () => {
     document.getElementById("Player1").innerHTML = " Player";
     document.getElementById("Player2").innerHTML = " Computer";
@@ -63,16 +67,16 @@ const singlePlayer = () => {
     document.getElementById("selectXButton").onclick = function () {
         selectFirstPlayer("X");
     };
-    player = "O"; //DEFAULT PLAYER SETTINGS FOR SINGLE PLAYER
+    player = "O"; // Default player settings for single player
     computer = "X";
     reset_board();
 };
 
+// Render the board and configure AI when the script loads
 render_board();
 configure_ai();
 
-//setTimeout(render_board(), 3000);
-
+// Check if the board is complete
 const checkBoardComplete = () => {
     let flag = true;
     play_board.forEach((element) => {
@@ -83,26 +87,28 @@ const checkBoardComplete = () => {
     board_full = flag;
 };
 
+// Main game loop
 const game_loop = () => {
     render_board();
     checkBoardComplete();
     checkWinner();
 };
-//FUNCTION TO DISPLAY WHOSE MOVE IT IS (Player/Computer/Player 1/2)
+
+// Function to display whose move it is
 const showPlayer = (mode, player) => {
-    if (mode == 1) {
-        // mode 1 is single Player
+    if (mode == 1) { // Single player mode
         if (player == 1 && !isFunMode)
             document.getElementById("move").innerHTML = "PLAYER plays as O!";
         else if (player == 1 && isFunMode)
             document.getElementById("move").innerHTML = "PLAYER plays as 😀!";
-    } else {
-        // Mode == 2 for 2 Players
+    } else { // Two player mode
         if (player == 1)
             document.getElementById("move").innerHTML = "Player 1 Move!";
         else document.getElementById("move").innerHTML = "Player 2 Move";
     }
 };
+
+// Randomly decide who starts the game
 const randomizeStart = () => {
     if (play_board.every((item) => item === "")) {
         // const PLAYER = 0;
@@ -122,18 +128,19 @@ const randomizeStart = () => {
         }
     }
 };
+
+// Function to handle player's move
 const addPlayerMove = (e) => {
     if (play_board[e] == "" && !board_full) {
         document.querySelector("#ai_level").disabled = true;
-        // Store the current state in the move history
-        lastMove = [...play_board];
+        lastMove = [...play_board]; // Store the current state in the move history
         play_board[e] = player;
         game_loop();
         if (gameMode == 1) {
             addComputerMove(ai_level);
             showPlayer(1, 1);
         } else {
-            // Toggle player - player changer
+            // Toggle player-player changer
             if (player == "X" || player == "😀") {
                 if (isFunMode) {
                     player = "🤖";
@@ -162,6 +169,7 @@ const undoLastMove = () => {
     }
 };
 
+// Function to add the computer's move (based on difficulty level)
 const addComputerMove = (ai_level) => {
     if (!board_full) {
         let score;
@@ -203,8 +211,10 @@ const addComputerMove = (ai_level) => {
     }
 };
 
+// Scoring for minimax algorithm
 let scores = { X: 1, "🤖": 1, O: -1, "😀": -1, tie: 0 };
 
+// Minimax algorithm for AI move calculation
 const minimax = (board, isMaximizing) => {
     let res = check_match();
     if (res != "") {
@@ -234,6 +244,8 @@ const minimax = (board, isMaximizing) => {
         return bestScore;
     }
 };
+
+// Variables for game statistics
 var temp1 = 0;
 var temp2 = 0;
 var temp3 = 0;
@@ -243,6 +255,7 @@ var temp6 = 0;
 
 var endMusic = null; //the Audio object for the music at the end of the game
 
+// Function to check for a winner
 const checkWinner = () => {
     let res = check_match();
     var playerstat1 = 0;
@@ -258,7 +271,7 @@ const checkWinner = () => {
     if (res == "O" || res == "😀") {
         if (gameMode == 1)
             winner_statement.innerText = "Player Won"; // Single player mode
-        else winner_statement.innerText = "Player 1 Won"; // 2 player mode
+        else winner_statement.innerText = "Player 1 Won"; // Two player mode
         winner_statement.classList.add("playerWin");
         board_full = true;
         playerstat1++;
@@ -304,7 +317,7 @@ const checkWinner = () => {
     document.getElementById("draw2").innerText = temp6;
 
     if (loss1 == 1 || loss2 == 1 || draw1 == 1 || draw2 == 1) {
-        //when the game ends, I create and add a button in the 'div-end-of-game' div
+        // When the game ends, create and add a button in the 'div-end-of-game' div
         var btn = document.createElement("button");
         btn.className = "btn-sound";
         btn.innerHTML = "<i class='fa fa-volume-up' aria-hidden='true'></i>";
@@ -313,10 +326,10 @@ const checkWinner = () => {
     }
 };
 
+// Audio control function
 var x = document.getElementById("myAudio");
-
 const muteAudio = () => {
-    //mutes or demutes all the audio (music and end game music)
+    // Mutes or demutes all the audio (music and end game music)
     var btn = document.getElementsByClassName("btn-sound")[0];
     if (!x.muted) {
         x.muted = true;
@@ -329,6 +342,7 @@ const muteAudio = () => {
     }
 };
 
+// Function to check if three blocks form a winning line
 const check_line = (a, b, c) => {
     let status =
         play_board[a] == play_board[b] &&
@@ -342,6 +356,7 @@ const check_line = (a, b, c) => {
     return status;
 };
 
+// Function to check if there's a match (win or draw)
 const check_match = () => {
     for (let i = 0; i < 9; i += 3) {
         if (check_line(i, i + 1, i + 2)) {
@@ -364,6 +379,7 @@ const check_match = () => {
     return "";
 };
 
+// Function to reset the game board
 const reset_board = () => {
     const winner_statement = document.getElementById("winner");
     play_board = ["", "", "", "", "", "", "", "", ""];
@@ -382,12 +398,12 @@ const reset_board = () => {
         mute_sound_btn.parentNode.removeChild(mute_sound_btn); //delete the button when reseting the board
 };
 
-/Reset board according to player choice/;
-
+//Reset board according to player choice
 const selectFirstPlayer = (symbol) => {
     reset_board1(symbol);
 };
 
+// Function to reset the board and set the starting player
 const reset_board1 = (firstPlayer) => {
     const winner_statement = document.getElementById("winner");
     play_board = ["", "", "", "", "", "", "", "", ""];
@@ -405,6 +421,7 @@ const reset_board1 = (firstPlayer) => {
         mute_sound_btn.parentNode.removeChild(mute_sound_btn); //delete the button when resetting the board
 };
 
+// Function to set the starting player
 const setStartingPlayer = (firstPlayer) => {
     if (play_board.every((item) => item === "")) {
         if (firstPlayer === "X" || firstPlayer === "😀") {
@@ -425,9 +442,8 @@ const setStartingPlayer = (firstPlayer) => {
     }
 };
 
-/* Fun Mode */
+// Function to toggle Fun Mode on and off
 let isFunMode = false;
-
 function enableFunMode() {
     isFunMode = !isFunMode;
 
@@ -445,6 +461,7 @@ function enableFunMode() {
     updateSymbols();
 }
 
+// Function to update symbols based on the mode
 function updateSymbols() {
     const playerButton = document.getElementById("selectXButton");
     const computerButton = document.getElementById("selectOButton");
@@ -479,6 +496,7 @@ function updateSymbols() {
     randomizeStart();
 }
 
+// Render the board, configure AI, and randomize the start when the script loads
 render_board();
 configure_ai();
 randomizeStart();
