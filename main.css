@@ -12,53 +12,8 @@ h1 {
     text-shadow: 1px 1px 3px #dadedf;
 }
 
-header {
-    background-color: white;
-}
-
 .right {
     text-align: right;
-}
-
-/* styling for instruction container */
-
-/*****************************/
-/* Styling For Menu */
-/*****************************/
-.pagination {
-    display: inline-block;
-    float: right;
-}
-
-.pagination a {
-    color: #1682a3;
-    float: left;
-    padding: 10px 10px;
-}
-
-.pagination a.active {
-    background-color: #1682a3;
-    color: white;
-}
-
-.pagination a:hover:not(.active) {
-    background-color: #36ded8;
-    color: white;
-}
-.pagination button {
-    background-color: white;
-    color: #1682a3;
-    float: left;
-    padding: 10px 10px;
-    border: thin;
-}
-.pagination button.active {
-    background-color: #52b788;
-    color: white;
-}
-.pagination button:hover:not(.active) {
-    background-color: #36ded8;
-    color: white;
 }
 
 /*****************************/
@@ -73,6 +28,7 @@ header {
     padding: 30px 40px;
     box-shadow: 20px 20px 20px #1682a3;
 }
+
 .wrapper .h4 {
     color: #0c0c68;
     text-shadow: 1px 1px 3px #dadedf;
@@ -80,9 +36,11 @@ header {
     text-align: center;
     padding-top: 0.5rem;
 }
+
 .right {
     text-align: right;
 }
+
 .wrapper center {
     margin: 0;
     position: relative;
@@ -91,6 +49,7 @@ header {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+
 .wrapper .button {
     text-align: center;
     margin-top: 15px;
@@ -155,11 +114,6 @@ header {
     background-color: #333333;
 }
 
-.dark-mode header {
-    color: #ffffff;
-    background-color: #333333;
-}
-
 .dark-mode .button {
     background-color: #333333;
     color: #ffffff;
@@ -172,20 +126,12 @@ header {
     border: 2px solid #ffffff;
 }
 
-.dark-mode .pagination a {
-    color: #ffffff;
+.dark-mode #hero {
+    background-color: #2a2a2a;
 }
 
-.dark-mode .pagination .btn-info {
-    background-color: #333333;
-    border-color: #ffffff;
-    color: #ffffff;
-}
-
-.dark-mode .pagination .btn-primary {
-    background-color: #333333;
-    border-color: #ffffff;
-    color: #ffffff;
+.dark-mode .navbar-brand {
+    color: white;
 }
 
 @keyframes animate {

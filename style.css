@@ -65,16 +65,19 @@
 
 .dark-btns .fun-btn {
     color: #2a2a2a;
-    background-color: #ad6bb0; /* Dark mode background color */
+    background-color: #ad6bb0;
+    /* Dark mode background color */
 }
 
 .fun-btn:hover {
-    background-color: #fff; /* Light mode hover background color */
+    background-color: #fff;
+    /* Light mode hover background color */
     color: #fbaaff;
 }
 
 .dark-btns .fun-btn:hover {
-    background-color: #2a2a2a; /* Dark mode hover background color */
+    background-color: #2a2a2a;
+    /* Dark mode hover background color */
     color: #ad6bb0;
 }
 
@@ -113,7 +116,7 @@
     justify-content: center;
 }
 
-.container > div {
+.container>div {
     border: 4px solid black;
     border-radius: 2px;
     font-family: Helvetica;
@@ -293,7 +296,7 @@ button:hover {
     background-color: white;
 }
 
-.navbar > a {
+.navbar>a {
     color: black;
 }
 
@@ -303,88 +306,110 @@ button:hover {
     margin-top: 5%;
     width: 100%;
 }
+
 .wrapper nav {
     top: 0px;
     width: 100%;
 }
+
 .wrapper nav ol {
     padding: 0px;
     list-style-type: none;
 }
+
 .wrapper nav ol li {
     display: inline-block;
     margin-bottom: 5%;
     text-align: center;
     width: 30%;
 }
+
 .wrapper nav ol li a {
     text-decoration: none;
 }
+
 .wrapper nav ol li a:hover {
     color: #0056b3;
     text-decoration: underline;
 }
+
 .wrapper a {
     color: rgb(3, 102, 214);
     font-size: 16px;
 }
+
 .wrapper h1 {
     color: rgb(3, 102, 214);
     text-align: center;
 }
+
 .shortDescr {
     margin-top: 5%;
     text-align: center;
 }
+
 .shortDescr a {
     font-weight: 600;
 }
+
 .shortDescr p {
     margin-top: 2%;
     padding: 10px;
     line-height: 25px;
 }
+
 .aboutContent {
     margin: 0 auto;
     margin-bottom: 10%;
     width: 90%;
 }
+
 .aboutContent h2,
 h3 {
     margin: 7% 0;
 }
+
 .aboutContent ul,
 ol {
     padding-left: 11%;
     padding-bottom: 1%;
     width: 100%;
 }
+
 .aboutContent ol {
     margin-bottom: 10px;
 }
+
 .aboutContent ul li {
     margin: 4% 0;
 }
+
 .aboutContent ul li a {
     text-decoration: none;
 }
+
 .aboutContent ul li a:hover {
     text-decoration: underline;
 }
+
 .aboutContent img {
     margin-top: 5%;
     width: 100%;
 }
+
 .aboutContent p {
     line-height: 25px;
 }
+
 .code {
     width: 100%;
 }
+
 .code {
     margin-bottom: 5%;
     width: 100%;
 }
+
 pre {
     background-color: rgb(246, 248, 250);
     line-height: 1.45;
@@ -406,6 +431,7 @@ pre {
     .wrapper nav {
         margin-bottom: 2%;
     }
+
     .wrapper nav ol li a {
         font-size: 20px;
     }
@@ -433,76 +459,96 @@ pre {
     .shortDescr {
         margin-top: 2%;
     }
+
     .shortDescr p {
         margin-top: 0%;
     }
+
     .aboutContent h2,
     h3 {
         margin: 4% 0;
     }
+
     .aboutContent ul li {
         margin: 2% 0;
     }
+
     .aboutContent ul,
     ol {
         padding-left: 4%;
     }
+
     .aboutContent img {
         margin-top: 0%;
     }
 }
+
 @media screen and (max-width: 1024px) {
     .wrapper {
         margin-left: 10%;
         width: 80%;
     }
+
     .wrapper nav ol li {
         margin-bottom: 3%;
     }
 }
+
 @media screen and (max-width: 1440px) {
     .wrapper nav ol li a {
         font-size: 26px;
     }
+
     .wrapper h1 {
         font-size: 36px;
     }
+
     .shortDescr a,
     .shortDescr p {
         font-size: 20px;
     }
+
     .aboutContent h2 {
         font-size: 30px;
     }
+
     .aboutContent h3 {
         font-size: 26px;
     }
+
     .aboutContent h2,
     h3 {
         margin: 3% 0;
     }
+
     .aboutContent ul,
     ol {
         padding-left: 3%;
     }
+
     .wrapper a {
         font-size: 20px;
     }
+
     .aboutContent p {
         font-size: 20px;
         line-height: 30px;
     }
+
     .aboutContent ul li,
     .aboutContent ol {
         font-size: 20px;
     }
+
     pre {
         font-size: 20px;
     }
+
     .aboutContent img {
         margin-left: 10%;
         width: 80%;
     }
+
     .code {
         margin-bottom: 2.5%;
     }
@@ -514,13 +560,16 @@ pre {
         margin-left: 15%;
         width: 70%;
     }
+
     .aboutContent h2,
     h3 {
         margin-bottom: 2%;
     }
+
     .aboutContent ul li {
         margin: 1% 0;
     }
+
     .aboutContent img {
         margin-left: 15%;
         margin-top: 1%;
@@ -568,7 +617,6 @@ thead {
 
 .dark-start-btn {
     background-color: #2a2a2a;
-    border-color: #3189b2;
     color: #3189b2;
     transition: none;
 }
@@ -576,6 +624,7 @@ thead {
 .dark-start-btn:hover {
     background-color: #3189b2;
     color: #2a2a2a;
+    border-color: black;
 }
 
 .dark-play {
