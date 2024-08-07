@@ -1,101 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<style>
-  #header-style {
-    border-color: black;
-    border-radius: 10px 100px / 120px;
-    border-style: groove;
-    border-width: 7px;
-    background: whitesmoke;
-    color: black;
-    font-family: Georgia;
-    height: 65px;
-    width: 350px;
-    margin: auto;
-    padding: 5px;
-    text-align: center;
-  }
-</style>
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tictactoe - About</title>
-  <link rel="stylesheet" href="style.css" type="text/css">
-  <!--Adding Favicon-->
-  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-
-</head>
-<style>
-  body {
-    background-image: url(https://i.pinimg.com/736x/35/d0/1f/35d01fd2047a3c3d468c3e6fdf5f7b89--paper-news-paper-templates.jpg);
-  }
-
-  .wrapper {
-    background-color: #F0CCB0;
-    padding: 20px;
-    border-color: black;
-    border-style: groove;
-    border-width: 5px;
-  }
-</style>
-
-<body>
-  <div class="wrapper">
-    <nav>
-      <ol>
-        <li>
-          <a href="mainmenu.html">Home</a>
-        </li>
-        <li>
-          <a href="about.html">About</a>
-        </li>
-        <li>
-          <a href="contributors.html">Contributors</a>
-        </li>
-      </ol>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe - About</title>
+    <!-- Bootstrap CSS for basic styling -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    <!-- Main custom CSS -->
+    <link rel="stylesheet" href="main.css" type="text/css" />
+    <!-- Specific page CSS -->
+    <link rel="stylesheet" href="about.css" type="text/css" />
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar fixed-top" id="hero">
+      <h1>Tic Tac Toe</h1>
+      <a class="navbar-brand" href="index.html">Home</a>
+      <a class="navbar-brand" href="rules.html">Rules</a>
+      <a class="navbar-brand" href="about.html">About</a>
+      <a class="navbar-brand" href="contributors.html">Contributors</a>
+      <button class="btn btn-info" onclick="enableDarkMode()">Dark Mode</button>
     </nav>
-    <br>
-    <h1 id="header-style">Tic-Tac-Toe</h1>
-    <div class="shortDescr">
-      <a href="https://yelynn1.github.io/tictactoe/" target="_blank" rel="noopener noreferrer">
-        Game Link: https://yelynn1.github.io/tictactoe/
-      </a>
-      <p><b><i>Tic-Tac-Toe game (web version) made using HTML and JS.</i></b></p>
-    </div>
-    <div class="aboutContent">
+
+    <div class="wrapper">
+      <h1>Tic-Tac-Toe</h1>
+      <p>
+        <a
+          href="https://yelynn1.github.io/tictactoe/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Game Link: https://yelynn1.github.io/tictactoe/
+        </a>
+      </p>
+      <p>
+        <b><i>Tic-Tac-Toe game (web version) made using HTML and JS.</i></b>
+      </p>
       <h2>Table of contents</h2>
       <ul>
-        <li>
-          <a href="#about">About the project</a>
-        </li>
-        <li>
-          <a href="#tech-stack">Tech Stack</a>
-        </li>
-        <li>
-          <a href="#getting-started">Getting Started</a>
-        </li>
-        <li>
-          <a href="#prerequisites">Prerequisites</a>
-        </li>
-        <li>
-          <a href="#setting-up-the-project">setting up the project</a>
-        </li>
-        <li>
-          <a href="#issues">Issues</a>
-        </li>
-        <li>
-          <a href="#contributing">Contributing</a>
-        </li>
-        <li>
-          <a href="#code-of-conduct">Code of Conduct</a>
-        </li>
-        <li>
-          <a href="#license">License</a>
-        </li>
+        <li><a href="#about">About the project</a></li>
+        <li><a href="#tech-stack">Tech Stack</a></li>
+        <li><a href="#getting-started">Getting Started</a></li>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#setting-up-the-project">Setting up the project</a></li>
+        <li><a href="#issues">Issues</a></li>
+        <li><a href="#contributing">Contributing</a></li>
+        <li><a href="#code-of-conduct">Code of Conduct</a></li>
+        <li><a href="#license">License</a></li>
       </ul>
       <h2 id="about">About The Project</h2>
-      <img style='border:5px solid #000000' src="./tictactoe.png" alt="Tictactoe logo" />
+      <img src="./tictactoe.png" alt="Tictactoe logo" style="width: 100%" />
       <h3 id="tech-stack">Tech Stack</h3>
       <ul>
         <li>HTML</li>
@@ -105,50 +65,83 @@
       <h2 id="getting-started">Getting Started</h2>
       <p>To get a local copy up and running follow these simple steps.</p>
       <h3 id="prerequisites">Prerequisites</h3>
-      <p>There are no special requirements to play this game apart from having a Web Browser which supports HTML5 and
-        CSS3.</p>
+      <p>
+        There are no special requirements to play this game apart from having a
+        Web Browser that supports HTML5 and CSS3.
+      </p>
       <h3 id="setting-up-the-project">Setting up the Project</h3>
       <ol>
         <li>Clone the repo.</li>
-      </ol>
-      <div style='border:5px solid #000000' class="code">
-        <b>
-          <pre style='font-family: Courier New;'>   git clone https://github.com/yelynn1/tictactoe.git</pre>
-        </b>
-      </div>
-      <ol start="2">
+        <pre>git clone https://github.com/yelynn1/tictactoe.git</pre>
         <li>Open the index.html file in any web browser.</li>
       </ol>
       <h2 id="issues">Issues</h2>
-      <p>Please file specific issues, bugs or feature requests in our
-        <a href="https://github.com/yelynn1/tictactoe/issues">issue tracker.</a>
-        Follow the issue template while creating a new issue.
+      <p>
+        Please file specific issues, bugs, or feature requests in our
+        <a href="https://github.com/yelynn1/tictactoe/issues">issue tracker</a>.
       </p>
       <h2 id="contributing">Contributing</h2>
       <p>
-        Contributions are what make the open source community such an amazing place to be learn, inspire and create.
-        Any contributions you make are
-        <strong>greatly appreciated.</strong>
-        If you wish to contribute a change to any of the existing features in this repo, please review our
-        <a href="https://github.com/yash2189/tictactoe/blob/fix-readme/CONTRIBUTING%20GUIDE.md">contribution guide</a>
-        and send a
-        <a href="https://github.com/yelynn1/tictactoe/pulls">pull request.</a>
+        Contributions are what make the open source community such an amazing
+        place to learn, inspire, and create. Any contributions you make are
+        <strong>greatly appreciated</strong>.
       </p>
       <h2 id="code-of-conduct">Code of Conduct</h2>
       <p>
-        We follow certain guidelines in order to maintain this repository. Please find our
-        <a href="https://github.com/yash2189/tictactoe/blob/fix-readme/CODE%20OF%20CONDUCT.md">code of conduct</a>
+        Please find our
+        <a
+          href="https://github.com/yash2189/tictactoe/blob/fix-readme/CODE%20OF%20CONDUCT.md"
+          >code of conduct</a
+        >
         and read it carefully.
       </p>
       <h2 id="license">License</h2>
       <p>
-        Distributed under the MIT License. See
-        <b><code style='font-family: Courier New;'>LICENSE</code></b>
-        for more information.
+        Distributed under the MIT License. See <b><code>LICENSE</code></b> for
+        more information.
       </p>
     </div>
-  </div>
+    <script>
+      window.onload = function () {
+        const currentMode = localStorage.getItem("theme") || "light-mode";
+        document.body.classList.add(currentMode);
 
-</body>
+        // Set button text based on current mode
+        const darkToggle = document.querySelector(".btn-info");
+        darkToggle.textContent =
+          currentMode === "dark-mode" ? "Light Mode" : "Dark Mode";
 
+        if (currentMode === "dark-mode") {
+          setDarkMode();
+        }
+      };
+
+      function enableDarkMode() {
+        const body = document.body;
+        const currentMode = body.classList.contains("dark-mode")
+          ? "dark-mode"
+          : "light-mode";
+        const newMode =
+          currentMode === "dark-mode" ? "light-mode" : "dark-mode";
+
+        body.classList.remove(currentMode);
+        body.classList.add(newMode);
+
+        // Save the preference to local storage
+        localStorage.setItem("theme", newMode);
+
+        // Update button text
+        const darkToggle = document.querySelector(".btn-info");
+        darkToggle.textContent =
+          newMode === "dark-mode" ? "Light Mode" : "Dark Mode";
+      }
+
+      function setDarkMode() {
+        document.body.classList.add("dark-mode");
+      }
+    </script>
+
+    <script src="https://connect.facebook.net/en_US/fbinstant.6.3.js"></script>
+    <script scr="app.js"></script>
+  </body>
 </html>
