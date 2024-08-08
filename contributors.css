@@ -1,10 +1,11 @@
 table {
     font-family: sans-serif;
     width: 100%;
-    
+
 }
 
-td, th {
+td,
+th {
     border: 1px solid #ffffff;
     text-align: left;
     padding: 8px;
@@ -15,54 +16,62 @@ th {
     text-align: center;
 }
 
-.contributors_body {
- 
-}
 .dark-mode .navbar-brand {
     color: white;
 }
 
 h1 {
     text-align: center;
-  /*  background-color: green */
+    /*  background-color: green */
 }
 
 h3 {
     text-align: center;
-   /* background-color: darkgreen */
+    /* background-color: darkgreen */
 }
 
 tr {
     background-color: #dddddd;
     color: black
 }
+
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    border-radius: 8px; /* Rounded corners */
-    overflow: hidden; /* Hide overflow for rounded corners */
+    border-radius: 8px;
+    /* Rounded corners */
+    overflow: hidden;
+    /* Hide overflow for rounded corners */
 }
 
-table, th, td {
+table,
+th,
+td {
     border: 1px solid #dddddd;
 }
 
-th, td {
-    padding: 12px; /* Increased padding for better readability */
+th,
+td {
+    padding: 12px;
+    /* Increased padding for better readability */
     text-align: left;
 }
 
 th {
-    background-color: #f2f2f2; /* Light gray background for headers */
-    color: #333333; /* Darker text for headers */
+    background-color: #f2f2f2;
+    /* Light gray background for headers */
+    color: #333333;
+    /* Darker text for headers */
     font-weight: bold;
 }
 
 tr:nth-child(even) {
-    background-color: #f9f9f9; /* Zebra stripe effect */
+    background-color: #f9f9f9;
+    /* Zebra stripe effect */
 }
 
 tr:hover {
-    background-color: #e2e2e2; /* Highlight row on hover */
+    background-color: #e2e2e2;
+    /* Highlight row on hover */
 }
